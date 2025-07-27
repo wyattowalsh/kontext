@@ -1,0 +1,47 @@
+# Kontext Application Configuration
+# =================================
+
+app_name: "Kontext"
+version: "1.0.0"
+debug: false
+
+# Document Processing Configuration
+document_processing:
+  supported_formats:
+    - pdf
+    - docx
+    - txt
+    - html
+    - md
+  max_file_size_mb: 50
+  default_chunk_size: 512
+  extract_tables: true
+  extract_images: false
+  parallel_processing: true
+  max_workers: 4
+
+# Web Crawling Configuration
+web_crawling:
+  default_max_urls: 100
+  default_max_depth: 3
+  default_concurrent_requests: 5
+  default_delay_ms: 1000
+  respect_robots_txt: true
+  user_agent: "Kontext-Crawler/1.0 (+https://github.com/your-repo/kontext)"
+  timeout_seconds: 30
+  max_retries: 3
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {name}:{function}:{line} | {message}"
+  rotation: "10 MB"
+  retention: "7 days"
+  log_dir: "logs"
+
+# UI Configuration
+ui:
+  theme: "light"
+  sidebar_expanded: true
+  show_progress_bars: true
+  results_per_page: 50
